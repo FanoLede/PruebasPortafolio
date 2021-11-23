@@ -34,18 +34,20 @@ driver.maximize_window()
 # password = "Carl.9719"
 
 #Coachee
-userCoachee = "felipito@gmail.com"
-passwordCoachee = "Feli.9999"
+#userCoachee = "felipito@gmail.com"
+#passwordCoachee = "Feli.9999"
+userCoachee = "s.ledezma@duocuc.cl"
+passwordCoachee = "Stef.9494"
 
 # Inicializamos el navegador
-#driver.get('https://www.sistemabitacoracoaching.tk/')
-driver.get('http://127.0.0.1:8000/')
+driver.get('https://www.sistemabitacoracoaching.tk/')
+#driver.get('http://127.0.0.1:8000/')
 
 
 #Login al servicio 
 driver.find_element_by_xpath('//*[@id="validationUsername"]').send_keys(userCoachee)
 driver.find_element_by_xpath('//*[@id="validationPassword"]').send_keys(passwordCoachee)
-driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[4]/button').click()
+driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[3]/button').click()
 
 #agregar print de validacion
 driver.find_element_by_xpath('/html/body/div[1]/div/button').click() #ingreso a perfil
@@ -61,6 +63,7 @@ else:
 time.sleep(2)     
 driver.find_element_by_xpath('/html/body/div[3]/div/div/div[1]/button').click() #Cerrar recuadro de perfil
 time.sleep(2)
+
 
 #Salir de sesion
 driver.find_element_by_xpath('/html/body/div[1]/div/button').click() #Perfil

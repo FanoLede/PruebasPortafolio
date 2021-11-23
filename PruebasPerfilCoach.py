@@ -37,8 +37,8 @@ passwordCoach = "Dani.9999"
 # password = "Stef.9494"
 
 # Inicializamos el navegador
-#driver.get('https://www.sistemabitacoracoaching.tk/')
-driver.get('http://127.0.0.1:8000/')
+driver.get('https://www.sistemabitacoracoaching.tk/')
+#driver.get('http://127.0.0.1:8000/')
 
 #Login al servicio 
 driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[1]/input').send_keys(userCoach)
