@@ -34,10 +34,10 @@ driver.maximize_window()
 # password = "Carl.9719"
 
 #Coachee
-#userCoachee = "felipito@gmail.com"
-#passwordCoachee = "Feli.9999"
-userCoachee = "s.ledezma@duocuc.cl"
-passwordCoachee = "Stef.9494"
+userCoachee = "coacheetestqa@gmail.com"
+passwordCoachee = "Feli.9999"
+#userCoachee = "s.ledezma@duocuc.cl"
+#passwordCoachee = "Stef.9494"
 
 # Inicializamos el navegador
 driver.get('https://www.sistemabitacoracoaching.tk/')
@@ -64,6 +64,31 @@ time.sleep(2)
 driver.find_element_by_xpath('/html/body/div[3]/div/div/div[1]/button').click() #Cerrar recuadro de perfil
 time.sleep(2)
 
+#Abrir sesión
+driver.find_element_by_xpath('/html/body/div[2]/div/div[1]/a').click() #Abrir sesión asignada
+time.sleep(2)
+driver.switch_to.window(driver.window_handles[1])
+time.sleep(2)
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
+time.sleep(2)
+driver.find_element_by_xpath('/html/body/div[2]/form/div/div[3]/div/div[1]/div[1]/div/textarea').send_keys('Texto Prueba') #Ingresar texto prueba
+time.sleep(2)
+driver.find_element_by_xpath('/html/body/div[2]/form/div/div[3]/div/div[2]/div/button').click() #Grabar
+time.sleep(2)
+driver.find_element_by_xpath('/html/body/div[4]/div/div[6]/button[1]').click() #Confirmar
+time.sleep(4)
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
+time.sleep(2)
+driver.find_element_by_xpath('/html/body/div[2]/div/div/div/div/div/p[1]').click() #Sesión 1
+time.sleep(2)
+driver.find_element_by_xpath('/html/body/div[2]/div/div/div/div/div/div[1]/div/form/div[3]/div[2]/div/textarea').send_keys('Texto Prueba') #Ingresar texto prueba
+time.sleep(2)
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
+time.sleep(2)
+driver.find_element_by_xpath('/html/body/div[2]/div/div/div/div/div/div[1]/div/form/div[5]/button').click() #Grabar
+time.sleep(4)
+driver.switch_to.window(driver.window_handles[0])
+time.sleep(2)
 
 #Salir de sesion
 driver.find_element_by_xpath('/html/body/div[1]/div/button').click() #Perfil

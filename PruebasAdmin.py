@@ -30,7 +30,7 @@ passwordAdmin = "Nels.9876"
 
 #Credenciales Gmail
 #Gmail
-userGmail = "AdmpruebaQA@gmail.com"
+userGmail = "admpruebaqa@gmail.com"
 passwordGmail = "Qa123456"
 # Inicializamos el navegador
 driver.get('https://www.sistemabitacoracoaching.tk/')
@@ -43,47 +43,6 @@ driver.find_element_by_xpath('//*[@id="validationUsername"]').send_keys(userAdmi
 driver.find_element_by_xpath('//*[@id="validationPassword"]').send_keys(passwordAdmin)
 driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[3]/button').click()
 time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[2]/div/button[2]').click()
-time.sleep(1)
-driver.find_element_by_xpath('/html/body/div[2]/div/div/a[2]').click()
-
-#Cambio de contraseña
-driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[4]/span/a').click()
-time.sleep(2)                              
-driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[2]/input').send_keys("AdmpruebaQA@gmail.com")
-time.sleep(2) 
-driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[3]/button').click()
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[2]/div/div[6]/button[1]').click()
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[4]/span/a').click()
-time.sleep(2)
-print("Se realiza solicitud de recuperacion de contraseña")
-
-#Cambio de pestaña en el navegador
-driver.execute_script("window.open('https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin')")
-time.sleep(2)
-driver.switch_to.window(driver.window_handles[1])
-time.sleep(2)
-driver.find_element_by_name("identifier").send_keys(userGmail)
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button').click()
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input').send_keys(passwordGmail)
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button').click()
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[8]/div/div[1]/div[3]/div/table/tbody/tr[1]/td[4]/div[2]/span').click()
-time.sleep(10)
-driver.switch_to.window(driver.window_handles[0])
-time.sleep(5)
-print ("Se recepciona correo por solicitud de cambio de contraseña de manera correcta")
-
-#Login administrador
-driver.find_element_by_xpath('//*[@id="validationUsername"]').send_keys(userAdmin)
-driver.find_element_by_xpath('//*[@id="validationPassword"]').send_keys(passwordAdmin)
-driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[3]/button').click()
-time.sleep(2) 
 
 #Validación credenciales
 driver.find_element_by_xpath('/html/body/div[2]/div/button[2]').click() #ingreso a perfil
@@ -137,7 +96,7 @@ driver.find_element_by_xpath('/html/body/div[6]/div[1]/div/form/div/div[1]/div/d
 time.sleep(2)
 driver.find_element_by_xpath('/html/body/div[6]/div[1]/div/form/div/div[1]/div/div/div[2]/div/input').send_keys("Gómez") #apellido coach
 time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[6]/div[1]/div/form/div/div[2]/div/div/div[1]/div/input').send_keys("dani@duocuc.cl") #Email coach
+driver.find_element_by_xpath('/html/body/div[6]/div[1]/div/form/div/div[2]/div/div/div[1]/div/input').send_keys("coachpruebaqa@gmail.com") #Email coach
 time.sleep(2)
 driver.find_element_by_xpath('/html/body/div[6]/div[1]/div/form/div/div[2]/div/div/div[2]/div/input').send_keys("999999999") #Fono jefe
 time.sleep(2)
@@ -145,8 +104,6 @@ driver.find_element_by_xpath('/html/body/div[6]/div[1]/div/form/div/button').cli
 time.sleep(2)
 driver.find_element_by_xpath('/html/body/div[8]/div/div[6]/button[1]').click()#confirmar usuario
 time.sleep(3)
-#driver.find_element_by_xpath('/html/body/div[8]/div/div[6]/button[2]').click()#Cancelar usuario
-#time.sleep(3)
 
 #Crear nuevo usuario Coachee
 driver.find_element_by_xpath('/html/body/div[4]/div/div/div[1]/div/button').click() #crear perfil coachee
@@ -161,7 +118,7 @@ driver.find_element_by_xpath('/html/body/div[5]/div/div/form/div/div[1]/div[4]/d
 time.sleep(2)
 driver.find_element_by_xpath('/html/body/div[5]/div/div/form/div/div[1]/div[4]/div/div[2]/div/input').send_keys("Figueroa") #apellido jefe
 time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[5]/div/div/form/div/div[2]/div[1]/div/input').send_keys("felipito@gmail.com") #Email coachee
+driver.find_element_by_xpath('/html/body/div[5]/div/div/form/div/div[2]/div[1]/div/input').send_keys("coacheetestqa@gmail.com") #Email coachee
 time.sleep(2)
 driver.find_element_by_xpath('/html/body/div[5]/div/div/form/div/div[2]/div[2]/div/input').send_keys("mau.figue@bigticket.cl") #correo jefe 
 time.sleep(2)
@@ -173,8 +130,6 @@ driver.find_element_by_xpath('/html/body/div[5]/div/div/form/button').click() #g
 time.sleep(2)
 driver.find_element_by_xpath('/html/body/div[8]/div/div[6]/button[1]').click()#confirmar usuario
 time.sleep(3)
-#driver.find_element_by_xpath('/html/body/div[8]/div/div[6]/button[2]').click()#Cancelar usuario
-#time.sleep(3)
 
 #Volver al menu principal del perfil adminitrador 
 driver.find_element_by_xpath('/html/body/div[3]/a[1]').click()
@@ -210,14 +165,6 @@ time.sleep(2)
 driver.find_element_by_xpath('/html/body/div[3]/a[1]').click()
 time.sleep(2)
 
-#Procesos creados
-# driver.execute_script("window.open('https://www.sistemabitacoracoaching.tk/visInfoProceso/4/')")
-# time.sleep(2)
-# driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
-# time.sleep(3)
-# driver.switch_to.window(driver.window_handles[0])
-# time.sleep(2)
-
 #Apartado de  creacion y modificacion de procesos 
 driver.find_element_by_xpath('/html/body/div[2]/div/button[1]').click() #ingreso Menu
 time.sleep(2)
@@ -239,8 +186,6 @@ driver.find_element_by_xpath('/html/body/div[4]/div/div[1]/form/button').click()
 time.sleep(2)
 driver.find_element_by_xpath('/html/body/div[6]/div/div[6]/button[1]').click() #Confirmar proceso
 time.sleep(3)
-#driver.find_element_by_xpath('/html/body/div[6]/div/div[6]/button[2]').click() #Cancelar proceso
-#time.sleep(3)
 
 #Listar proceso
 driver.find_element_by_xpath('/html/body/div[3]/a[3]').click() #Listar Procesos
@@ -263,6 +208,39 @@ driver.find_element_by_xpath('/html/body/div[2]/div/button[2]').click() #perfil
 time.sleep(2)
 driver.find_element_by_xpath('/html/body/div[2]/div/div/a[2]').click() #cierre sesión
 time.sleep(2)
+
+#Cambio de contraseña
+driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[4]/span/a').click()#Olvido su contraseña
+time.sleep(2)                              
+driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[2]/input').send_keys("AdmpruebaQA@gmail.com")#Ingreso de correo de recuperación 
+time.sleep(2) 
+driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[3]/button').click()#click en recuperar 
+time.sleep(2)
+driver.find_element_by_xpath('/html/body/div[2]/div/div[6]/button[1]').click()#Mensaje de confirmación
+time.sleep(2)
+driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[4]/span/a').click()#Volver al inicio
+time.sleep(2)
+print("Se realiza solicitud de recuperacion de contraseña")
+
+#Cambio de pestaña en el navegador
+driver.execute_script("window.open('https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin')")
+time.sleep(2)
+driver.switch_to.window(driver.window_handles[1])
+time.sleep(2)
+driver.find_element_by_name("identifier").send_keys(userGmail)
+time.sleep(2)
+driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button').click()
+time.sleep(2)
+driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input').send_keys(passwordGmail)
+time.sleep(2)
+driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button').click()
+time.sleep(2)
+driver.find_element_by_xpath('/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[8]/div/div[1]/div[3]/div/table/tbody/tr[1]').click()
+time.sleep(5)
+driver.switch_to.window(driver.window_handles[0])
+time.sleep(5)
+print ("Se recepciona correo por solicitud de cambio de contraseña de manera correcta")
+time.sleep(5) 
 
 
 #cerrar el navegador
