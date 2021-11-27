@@ -86,14 +86,14 @@ time.sleep(2)
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
 time.sleep(2)
 driver.find_element_by_xpath('/html/body/div[2]/div/div/div/div/div/div[1]/div/form/div[5]/button').click() #Grabar
+time.sleep(2)
+driver.find_element_by_xpath('/html/body/div[4]/div/div[6]/button[1]').click() #Confirmar 
 time.sleep(4)
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
+time.sleep(2)
+driver.find_element_by_xpath('/html/body/div[2]/a').click() #Cerrar vista sesión
+time.sleep(2)
 driver.switch_to.window(driver.window_handles[0])
-time.sleep(2)
-
-#Salir de sesion
-driver.find_element_by_xpath('/html/body/div[1]/div/button').click() #Perfil
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/a[2]').click() #cerrar sesion
 time.sleep(2)
 
 # #Salir de sesion
