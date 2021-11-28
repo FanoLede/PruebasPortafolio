@@ -50,7 +50,7 @@ except:
      print("Fallo login")
 
 
-#agregar print de validacion
+#Validación credenciales
 try:
      driver.find_element_by_xpath('/html/body/div[2]/div/button[2]').click() #ingreso a perfil
      time.sleep(1)
@@ -99,13 +99,7 @@ except:
 
 #Seleccion menú
 try:
-     driver.find_element_by_xpath('/html/body/div[2]/div/button[1]').click() #ingreso a menú
-     time.sleep(2)
-
-#Listar procesos asignados
-     driver.find_element_by_xpath('/html/body/div[1]/a[5]').click() #Lista de procesos del coach
-     time.sleep(2)
-
+     
 #Buscar por Nombre de la empresa
      driver.find_element_by_xpath('/html/body/div[3]/div[1]/div/div[1]/div/input').send_keys("BigTicket") #ingreso de parametros de búsqueda
      time.sleep(2)
