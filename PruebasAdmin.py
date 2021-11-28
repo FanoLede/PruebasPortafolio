@@ -29,7 +29,7 @@ passwordAdmin = "Nels.9876"
 
 #Credenciales Gmail
 #Gmail
-userGmail = "admpruebaqa@gmail.com"
+userGmail = "coachpruebaqa@gmail.com"
 passwordGmail = "Qa123456"
 # Inicializamos el navegador
 driver.get('https://www.sistemabitacoracoaching.tk/')
@@ -240,7 +240,7 @@ except:
 try:
      driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[4]/span/a').click()#Olvido su contraseña
      time.sleep(2)                              
-     driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[2]/input').send_keys("AdmpruebaQA@gmail.com")#Ingreso de correo de recuperación 
+     driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[2]/input').send_keys(userGmail)#Ingreso de correo de recuperación 
      time.sleep(2) 
      driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[3]/button').click()#click en recuperar 
      time.sleep(2)
