@@ -21,6 +21,8 @@ Para poder ejecutar estas pruebas debe cumplir con los requerimientos minimos:
         4)  Descargar chromedriver desde el siguiente link segun su versión de google chrome => https://chromedriver.chromium.org/downloads 
             Opcionalmente, deje en una ruta/directorio/carpeta deseada.
         5)  Abrir los archivos de prueba .py dentro del proyecto, editar el campo driver_path y dentro de este agregar la ruta donde se encuentra chromedriver.
+        
+            driver_path='Inserte su ruta aqui'
 
                 EJEMPLO: 
 
@@ -31,7 +33,7 @@ Para poder ejecutar estas pruebas debe cumplir con los requerimientos minimos:
                                         options.add_argument('--start-maximized')
                                         options.add_argument('--disable-extensions')
 
-                                        driver_path = 'C:\\Users\\56949\\Downloads\\chromedriver.exe'
+Linea a editar  =======================>driver_path = 'C:\\Agregar\\La\\Ruta\\Ejemplo\\Aqui\\chromedriver.exe'
 
                                         driver = webdriver.Chrome(driver_path, chrome_options=options)
 
