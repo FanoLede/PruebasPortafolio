@@ -16,7 +16,7 @@ Para poder ejecutar estas pruebas debe cumplir con los requerimientos minimos:
     Instalacion
 
         1)  Instalar Python 3.8.x, lo puede descargar desde el siguiente link =>  https://www.python.org/downloads/
-        2)  Instalar el administrador de paquetes PIP con el siguiente comando omando ==>> python -m pip install --upgrade pip
+        2)  Instalar el administrador de paquetes PIP con el siguiente comando ==>> python -m pip install --upgrade pip
         3)  Ahora con pip instalado podra instalar la libreria de selenium en el ambiente de pruebas  ----- > pip install selenium
         4)  Descargar chromedriver desde el siguiente link segun su versión de google chrome => https://chromedriver.chromium.org/downloads 
             Opcionalmente, deje en una ruta/directorio/carpeta deseada.
