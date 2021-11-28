@@ -8,7 +8,7 @@
                                                                 ▕╭╮╰┳┳┳┳╯╰╯▕╰╯▏
                                                                 ▕╰╯┈┗┛┗┛┈╭╮▕╮┈▏          
 
-Bienvenido a las pruebas de portafolio, para poder realizar la ejecución de las pruebas, se requiere de los sigue
+Bienvenido a las pruebas de portafolio, para poder realizar la ejecución de las pruebas, se requiere de lo siguiente
 
 
 Para poder ejecutar estas pruebas debe cumplir con los requerimientos minimos:
