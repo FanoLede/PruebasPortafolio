@@ -29,7 +29,7 @@ driver.maximize_window()
 # password = "Nels.9876"
 
 #Coach
-userCoach = "dani@duocuc.cl"
+userCoach = "coachpruebaqa@gmail.com"
 passwordCoach = "Dani.9999"
 
 # #Coachee
@@ -37,8 +37,8 @@ passwordCoach = "Dani.9999"
 # password = "Stef.9494"
 
 # Inicializamos el navegador
-driver.get('https://www.sistemabitacoracoaching.tk/')
-#driver.get('http://127.0.0.1:8000/')
+#driver.get('https://www.sistemabitacoracoaching.tk/')
+driver.get('http://127.0.0.1:8000/')
 
 #Login al servicio 
 try:
