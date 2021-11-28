@@ -29,7 +29,7 @@ driver.maximize_window()
 # password = "Nels.9876"
 
 #Coach
-userCoach = "dani@duocuc.cl"
+userCoach = "coachpruebaqa@gmail.com"
 passwordCoach = "Dani.9999"
 
 # #Coachee
@@ -37,102 +37,145 @@ passwordCoach = "Dani.9999"
 # password = "Stef.9494"
 
 # Inicializamos el navegador
-driver.get('https://www.sistemabitacoracoaching.tk/')
-#driver.get('http://127.0.0.1:8000/')
+#driver.get('https://www.sistemabitacoracoaching.tk/')
+driver.get('http://127.0.0.1:8000/')
 
 #Login al servicio 
-driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[1]/input').send_keys(userCoach)
-driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[2]/input').send_keys(passwordCoach)
-driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[3]/button').click()
+try:
+     driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[1]/input').send_keys(userCoach)
+     driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[2]/input').send_keys(passwordCoach)
+     driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[3]/button').click()
+     print("Prueba realizada con exito")
+except:
+     print("Fallo login")
 
-#agregar print de validacion
-driver.find_element_by_xpath('/html/body/div[2]/div/button[2]').click() #ingreso a perfil
-time.sleep(1)
-driver.find_element_by_xpath('/html/body/div[2]/div/div/a[1]').click() #busqueda de correo en perfil
-time.sleep(1)
-usuarioActual = driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div/div/div[2]/div[1]/div/input').get_attribute('value') #seleccion de correo en perfil
-time.sleep(2)
-if usuarioActual== userCoach:
-     print ("Usuario correcto")
-else: 
-     assert print ("Usuario distinto") 
-time.sleep(2)     
-driver.find_element_by_xpath('/html/body/div[4]/div/div/div[1]/button').click() #Cerrar recuadro de perfil
-time.sleep(2)
+
+#Validación credenciales
+try:
+     driver.find_element_by_xpath('/html/body/div[2]/div/button[2]').click() #ingreso a perfil
+     time.sleep(1)
+     driver.find_element_by_xpath('/html/body/div[2]/div/div/a[1]').click() #busqueda de correo en perfil
+     time.sleep(1)
+     usuarioActual = driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div/div/div[2]/div[1]/div/input').get_attribute('value') #seleccion de correo en perfil
+     time.sleep(2)
+     if usuarioActual== userCoach:
+          print ("Usuario correcto")
+     else: 
+          assert print ("Usuario distinto") 
+     time.sleep(2)     
+     driver.find_element_by_xpath('/html/body/div[4]/div/div/div[1]/button').click() #Cerrar recuadro de perfil
+     time.sleep(2)
+     print("Revision realizada con éxito")
+except:
+     print("Problemas en la validación")
+
+#Procesos asignados
+try:
+     driver.find_element_by_xpath('/html/body/div[2]/div/button[1]').click() #ingreso a menú
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[1]/a[5]').click() #Procesos Asignados
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[3]/div/div[1]/a').click() #Click en último proceso
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[1]/div[1]/div/div/div/div/select/option[2]').click() #Cambio de estado
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/div/div/div[1]/div/textarea').send_keys("Prueba de Campo") #Ingreso texto1
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/div/div/div[2]/div/textarea').send_keys("Prueba de Campo") #Ingreso texto2
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[3]/div/div/div[1]/div/textarea').send_keys("Prueba de Campo") #Ingreso texto3
+     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[4]/button').click() #Grabar
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[6]/div/div[6]/button[1]').click() #Confirmar
+     time.sleep(2)
+     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
+     driver.find_element_by_xpath('/html/body/div[4]/div/a[1]').click() #Volver
+     time.sleep(2)
+     print("Proceso asignado con éxito")
+except:
+     print("Error en la asignación del proceso")
 
 #Seleccion menú
-driver.find_element_by_xpath('/html/body/div[2]/div/button[1]').click() #ingreso a menú
-time.sleep(2)
-
-#Listar procesos asignados
-driver.find_element_by_xpath('/html/body/div[1]/a[5]').click() #Lista de procesos del coach
-time.sleep(2)
-
+try:
+     
 #Buscar por Nombre de la empresa
-driver.find_element_by_xpath('/html/body/div[3]/div[1]/div/div[1]/div/input').send_keys("BigTicket") #ingreso de parametros de búsqueda
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[3]/div[1]/div/div[1]/div/input').clear()
-time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[3]/div[1]/div/div[1]/div/input').send_keys("BigTicket") #ingreso de parametros de búsqueda
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[3]/div[1]/div/div[1]/div/input').clear()
+     time.sleep(2)
 
 #Buscar por nombre del Coachee
-driver.find_element_by_xpath('/html/body/div[3]/div[1]/div/div[2]/div/input').send_keys("Felipe Segura") #Ingreso de parametros de busqueda por nombre de coachee
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[3]/div[1]/div/div[2]/div/input').clear()
+     driver.find_element_by_xpath('/html/body/div[3]/div[1]/div/div[2]/div/input').send_keys("Felipe Segura") #Ingreso de parametros de busqueda por nombre de coachee
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[3]/div[1]/div/div[2]/div/input').clear()
+     print("Búsqueda realizada con éxito")
+except:
+     print("Fallo en la búsqueda solicitada")
 
 #Visualizar procesos
-driver.find_element_by_xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/table/tbody/tr/th[6]/a/i').click() #Ingreso a visualizacion del proceso
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[1]/div[1]/div/div/div/div/select/option[3]').click() #cambio de estado
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/div/div/div[1]/div/textarea').send_keys("PRUEBA DE TEXTO") #Prueba Objetivo
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/div/div/div[2]/div/textarea').send_keys("PRUEBA DE TEXTO") #Prueba indicadores
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[3]/div/div/div[1]/div/textarea').send_keys("PRUEBA DE TEXTO") #Prueba Plan de accion
-time.sleep(2)
-driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[4]/button').click() #guardar
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[6]/div/div[6]/button[1]').click() #Confirmar
-time.sleep(4)
-driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div/div/div/p[1]').click() #Información sesión 1
-time.sleep(1)
-driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/form/div[1]/div[1]/div/div[1]/div/input').send_keys("04-10-2021")  #fecha inicio
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/form/div[1]/div[1]/div/div[2]/div/input').send_keys("15:45") #hora inicio
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/form/div[1]/div[2]/div/select/option[2]').click() #Estado sesion
-time.sleep(2)
-driver.find_element_by_xpath("/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/form/div[2]/div[1]/div/textarea").send_keys("PRUEBA DE TEXTO") #prueba1
-time.sleep(1)
-driver.find_element_by_xpath("/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/form/div[2]/div[2]/div/textarea").send_keys("PRUEBA DE TEXTO") #prueba2
-time.sleep(1)
-driver.find_element_by_xpath("/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/form/div[3]/div/div/textarea").send_keys("PRUEBA DE TEXTO") #prueba3
-time.sleep(2)
-driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
-time.sleep(2)
-driver.find_element_by_xpath("/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/div/button").click() #Guardar sesion1
-time.sleep(2)
-driver.find_element_by_xpath("/html/body/div[6]/div/div[6]/button[1]").click() #confirmar
-time.sleep(3)
-driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
-time.sleep(2)
-
+try:
+     driver.find_element_by_xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/table/tbody/tr/th[6]/a/i').click() #Ingreso a visualizacion del proceso
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[1]/div[1]/div/div/div/div/select/option[3]').click() #cambio de estado
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/div/div/div[1]/div/textarea').send_keys("PRUEBA DE TEXTO") #Prueba Objetivo
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/div/div/div[2]/div/textarea').send_keys("PRUEBA DE TEXTO") #Prueba indicadores
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[3]/div/div/div[1]/div/textarea').send_keys("PRUEBA DE TEXTO") #Prueba Plan de accion
+     time.sleep(2)
+     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[4]/button').click() #guardar
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[6]/div/div[6]/button[1]').click() #Confirmar
+     time.sleep(4)
+     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div/div/div/p[1]').click() #Información sesión 1
+     time.sleep(1)
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/form/div[1]/div[1]/div/div[1]/div/input').send_keys("04-10-2021")  #fecha inicio
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/form/div[1]/div[1]/div/div[2]/div/input').send_keys("15:45") #hora inicio
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/form/div[1]/div[2]/div/select/option[2]').click() #Estado sesion
+     time.sleep(2)
+     driver.find_element_by_xpath("/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/form/div[2]/div[1]/div/textarea").send_keys("PRUEBA DE TEXTO") #prueba1
+     time.sleep(1)
+     driver.find_element_by_xpath("/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/form/div[2]/div[2]/div/textarea").send_keys("PRUEBA DE TEXTO") #prueba2
+     time.sleep(1)
+     driver.find_element_by_xpath("/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/form/div[3]/div/div/textarea").send_keys("PRUEBA DE TEXTO") #prueba3
+     time.sleep(2)
+     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
+     time.sleep(2)
+     driver.find_element_by_xpath("/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/div/button").click() #Guardar sesion1
+     time.sleep(2)
+     driver.find_element_by_xpath("/html/body/div[6]/div/div[6]/button[1]").click() #confirmar
+     time.sleep(3)
+     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
+     time.sleep(2)
+     
 #Descargar PDF
-driver.find_element_by_xpath("/html/body/div[4]/div/a[2]").click()#Click al boton descargar 
-time.sleep(5)
+     driver.find_element_by_xpath("/html/body/div[4]/div/a[2]").click()#Click al boton descargar 
+     time.sleep(5)
 
-driver.find_element_by_xpath('/html/body/div[4]/div/a[1]').click() #Volver a listado 
-time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[4]/div/a[1]').click() #Volver a listado 
+     time.sleep(2)
+     print("visualización, modificación y cdescargas realizadas con éxito")
+except:
+     print("Problemas con solicitud")
 
-#Listar procesos 
-driver.find_element_by_xpath('/html/body/div[2]/div/button[1]').click() #Ingreso a menú
-time.sleep(2)
-driver.find_element_by_xpath('/html/body/div[1]/a[4]').click() #Apartado de listar procesos 
-time.sleep(2)
+#Procesos asignados
+try:
+     driver.find_element_by_xpath('/html/body/div[2]/div/button[1]').click() #Ingreso a menú
+     time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[1]/a[4]').click() #Procesos asignados
+     time.sleep(2)
+     print("Ver procesos")
+except:
+     print("Error en visualización de los procesos")
 
 #Salida vista principal
 driver.find_element_by_xpath('/html/body/div[2]/div/button[2]').click() #Perfil
