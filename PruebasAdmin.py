@@ -8,7 +8,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
-
 # Opciones de navegación
 options =  webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
@@ -30,7 +29,8 @@ passwordAdmin = "Nels.9876"
 #Credenciales Gmail
 #Gmail
 userGmail = "coachpruebaqa@gmail.com"
-passwordGmail = "Qa123456"
+passwordGmail = "hxucvnqdnrtvdsdl"
+
 # Inicializamos el navegador
 driver.get('https://www.sistemabitacoracoaching.tk/')
 print ("El titulo de la URL-principal es: https://www.sistemabitacoracoaching.tk/")
@@ -234,9 +234,10 @@ try:
      time.sleep(2)
      print("Creación y listado de procesos OK")
 except:
-     print("Problemas en el proceso")
-
-#Cambio de contraseña
+     print("Problemas en el proceso") 
+     time.sleep(3)
+ 
+""" #Cambio de contraseña
 try:
      driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[4]/span/a').click()#Olvido su contraseña
      time.sleep(2)                              
@@ -251,17 +252,18 @@ try:
      print("Se realiza solicitud de recuperacion de contraseña de manera correcta")
 except:
      print("Falló solicitud de recuperación")
+     time.sleep(3)
 
 #Cambio de pestaña en el navegador
 try:
-     driver.execute_script("window.open('https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin')")
+     driver.execute_script("window.open('https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin')")
      time.sleep(2)
      driver.switch_to.window(driver.window_handles[1])
      time.sleep(2)
      driver.find_element_by_name("identifier").send_keys(userGmail)
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button').click()
-     time.sleep(2)
+     time.sleep(20)
      driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input').send_keys(passwordGmail)
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button').click()
@@ -272,7 +274,7 @@ try:
      time.sleep(5)
      print("Se verifica correo de recuperación OK")
 except:
-     print("Correo no enviado")
+     print("Correo no enviado") """
 
 #cerrar el navegador
 driver.quit()

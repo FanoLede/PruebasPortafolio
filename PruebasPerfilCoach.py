@@ -37,8 +37,8 @@ passwordCoach = "Dani.9999"
 # password = "Stef.9494"
 
 # Inicializamos el navegador
-#driver.get('https://www.sistemabitacoracoaching.tk/')
-driver.get('http://127.0.0.1:8000/')
+driver.get('https://www.sistemabitacoracoaching.tk/')
+#driver.get('http://127.0.0.1:8000/')
 
 #Login al servicio 
 try:
@@ -79,11 +79,11 @@ try:
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[1]/div[1]/div/div/div/div/select/option[2]').click() #Cambio de estado
      time.sleep(2)
-     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/div/div/div[1]/div/textarea').send_keys("Prueba de Campo") #Ingreso texto1
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/div/div/div[1]/div/textarea').send_keys("Prueba de Campo coach") #Ingreso texto1
      time.sleep(2)
-     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/div/div/div[2]/div/textarea').send_keys("Prueba de Campo") #Ingreso texto2
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/div/div/div[2]/div/textarea').send_keys("Prueba de Campo coach") #Ingreso texto2
      time.sleep(2)
-     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[3]/div/div/div[1]/div/textarea').send_keys("Prueba de Campo") #Ingreso texto3
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[3]/div/div/div[1]/div/textarea').send_keys("Prueba de Campo coach") #Ingreso texto3
      driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[4]/button').click() #Grabar
@@ -136,7 +136,7 @@ try:
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div/div/div/p[1]').click() #Información sesión 1
      time.sleep(1)
-     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/form/div[1]/div[1]/div/div[1]/div/input').send_keys("04-10-2021")  #fecha inicio
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/form/div[1]/div[1]/div/div[1]/div/input').send_keys("29-11-2021")  #fecha inicio
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[4]/form/div/div[2]/div/div/div/div[1]/div/form/div[1]/div[1]/div/div[2]/div/input').send_keys("15:45") #hora inicio
      time.sleep(2)
