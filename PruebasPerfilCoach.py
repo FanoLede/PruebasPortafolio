@@ -74,7 +74,7 @@ except:
      print("Problemas en la validación")
 
 #Procesos asignados
-""" try:
+try:
      driver.find_element_by_xpath('/html/body/div[2]/div/button[1]').click() #ingreso a menú
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[1]/a[4]').click() #Procesos Asignados
@@ -83,11 +83,12 @@ except:
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[1]/div[1]/div/div/select/option[3]').click() #Cambio de estado
      time.sleep(2)
-     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/div/div/div[1]/div/textarea').send_keys("Prueba de Campo coach ") #Ingreso texto1
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/div/div/div[1]/div/textarea').send_keys("PRUEBA COACH ") #Ingreso texto1
      time.sleep(2)
-     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/div/div/div[2]/div/textarea').send_keys("Prueba de Campo coach ") #Ingreso texto2
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/div/div/div[2]/div/textarea').send_keys("PRUEBA COACH ") #Ingreso texto2
      time.sleep(2)
-     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[3]/div/div/div[1]/div/textarea').send_keys("Prueba de Campo coach ") #Ingreso texto3
+     driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[3]/div/div/div[1]/div/textarea').send_keys("PRUEBA COACH ") #Ingreso texto3
+     time.sleep(2)
      driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[4]/button').click() #Grabar
@@ -95,20 +96,15 @@ except:
      driver.find_element_by_xpath('/html/body/div[6]/div/div[6]/button[1]').click() #Confirmar
      time.sleep(5)
      driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
-     driver.find_element_by_xpath('/html/body/div[4]/div/a[1]').click() #Volver
      time.sleep(2)
+     driver.find_element_by_xpath('/html/body/div[4]/div/a[1]').click() #Volver
+     time.sleep(5)
      print("Proceso asignado con éxito")
 except:
-     print("Error en la asignación del proceso")""" 
+     print("Error en la asignación del proceso") 
 
-#Seleccion menú
-try:
-     driver.find_element_by_xpath('/html/body/div[2]/div/button[1]').click() #ingreso a menú
-     time.sleep(2)
-     driver.find_element_by_xpath('/html/body/div[1]/a[5]').click() #ingreso a menú
-     time.sleep(2)
-     
 #Buscar por Nombre de la empresa
+try:
      driver.find_element_by_xpath('/html/body/div[3]/div[1]/div/div[1]/div/input').send_keys("BigTicket") #ingreso de parametros de búsqueda
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[3]/div[1]/div/div[1]/div/input').clear()
