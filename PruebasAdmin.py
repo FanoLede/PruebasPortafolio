@@ -65,7 +65,7 @@ try:
      print("Revision realizada con éxito")
 except:
      print("Problemas en la validación")
-
+""" 
 #ingresar al menu del administrador 
 try:
      driver.find_element_by_xpath('/html/body/div[2]/div/button[1]').click()
@@ -153,9 +153,10 @@ except:
 #Volver al menu principal del perfil adminitrador 
 try:
      driver.find_element_by_xpath('/html/body/div[3]/a[1]').click()
-     time.sleep(2)
+     time.sleep(2) """
 
 #Listar usuario
+try:
      driver.find_element_by_xpath('/html/body/div[2]/div/button[1]').click() #ingreso Menu
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[1]/a[5]').click() #Usuarios
@@ -169,7 +170,7 @@ try:
      driver.find_element_by_xpath('/html/body/div[4]/div/form/div/div[1]/div/input').send_keys("Felipe segura") #credenciales de búsqueda
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[4]/div/form/div/div[1]/div/input').clear()
-     time.sleep(2)
+     """ time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[4]/div/form/div/div[2]/div/select/option[2]').click() #Busqueda por administrador
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[4]/div/form/div/div[2]/div/select/option[4]').click() #Busqueda por coachee
@@ -178,7 +179,7 @@ try:
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[4]/div/form/div/div[3]/div/select/option[2]').click() #Busqueda por habilitado
      time.sleep(2)
-     driver.find_element_by_xpath('/html/body/div[4]/div/form/div/div[3]/div/select/option[3]').click() #Busqueda por deshabilitado
+     driver.find_element_by_xpath('/html/body/div[4]/div/form/div/div[3]/div/select/option[3]').click() #Busqueda por deshabilitado """
      time.sleep(2)
      print("Listar usuarios OK")
 except:
