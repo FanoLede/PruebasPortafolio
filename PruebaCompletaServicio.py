@@ -1,5 +1,6 @@
 
 import time
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.keys import Keys
@@ -14,7 +15,7 @@ options =  webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 options.add_argument('--disable-extensions')
 
-driver_path = 'C:\\Users\\56949\\Downloads\\chromedriver.exe'
+driver_path = 'C:\\chromedriver\\chromedriver.exe'
 
 driver = webdriver.Chrome(driver_path, chrome_options=options)
 
@@ -55,7 +56,7 @@ try:
      driver.find_element_by_xpath('//*[@id="validationPassword"]').send_keys(passwordAdmin)
      driver.find_element_by_xpath('/html/body/div/div/div[2]/form/div[3]/button').click()
      time.sleep(2)
-     print("Prueba realizada con exito")
+     print ("Prueba realizada con exito")
 except:
      print("Fallo login")
 
@@ -70,7 +71,7 @@ try:
      if usuarioActual== userAdmin:
           print ("Usuario correcto")
      else: 
-          assert print ("Usuario distinto") 
+          print ("Usuario distinto") 
      time.sleep(2)     
      driver.find_element_by_xpath('/html/body/div[4]/div/div/div[1]/button').click() #Cerrar recuadro de perfil
      time.sleep(2)
@@ -213,7 +214,7 @@ try:
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[4]/div/div[1]/form/div[1]/div/input').send_keys("BigTicket") #nombre empresa
      time.sleep(2)
-     driver.find_element_by_xpath('/html/body/div[4]/div/div[1]/form/div[2]/div/input').send_keys("4") #cantidad de sesiones
+     driver.find_element_by_xpath('/html/body/div[4]/div/div[1]/form/div[2]/div/input').send_keys("3") #cantidad de sesiones
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[4]/div/div[1]/form/div[4]/div/select').send_keys("Danilo Gómez") #selección de coach
      time.sleep(2)
@@ -335,16 +336,16 @@ try:
      driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[2]/div/div/div[2]/div/textarea').send_keys("PRUEBA COACH ") #Ingreso texto2
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[3]/div/div/div[1]/div/textarea').send_keys("PRUEBA COACH ") #Ingreso texto3
-     time.sleep(2)
+     time.sleep(4)
      driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
-     time.sleep(2)
+     time.sleep(4)
      driver.find_element_by_xpath('/html/body/div[4]/form/div/div[1]/div[4]/button').click() #Grabar
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[6]/div/div[6]/button[1]').click() #Confirmar
      time.sleep(5)
      driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
      time.sleep(2)
-     driver.find_element_by_xpath('/html/body/div[4]/div/a[1]').click() #Volver
+     driver.find_element_by_xpath('/html/body/div[4]/div/div/a[1]').click() #Volver
      time.sleep(5)
      print("Proceso asignado con éxito")
 except:
@@ -435,10 +436,10 @@ try:
      time.sleep(2)
      
 #Descargar PDF
-     driver.find_element_by_xpath("/html/body/div[4]/div/a[2]").click()#Click al boton descargar 
+     driver.find_element_by_xpath("/html/body/div[4]/div/div/a[2]").click()#Click al boton descargar 
      time.sleep(5)
 
-     driver.find_element_by_xpath('/html/body/div[4]/div/a[1]').click() #Volver a listado 
+     driver.find_element_by_xpath('/html/body/div[4]/div/div/a[1]').click() #Volver a listado 
      time.sleep(2)
      print("visualización, modificación y cdescargas realizadas con éxito")
 except:
@@ -487,10 +488,11 @@ except:
 
 #Abrir sesión
 try:
+     
      driver.find_element_by_xpath('/html/body/div[2]/div/div[1]/a').click() #Abrir sesión asignada
      time.sleep(2)
      driver.switch_to.window(driver.window_handles[1])
-     time.sleep(2)
+     time.sleep(4)
      driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
      time.sleep(2)
      driver.find_element_by_xpath('/html/body/div[2]/form/div/div[3]/div/div[1]/div[1]/div/textarea').send_keys('TEXTO PRUEBA') #Ingresar texto prueba
@@ -535,5 +537,7 @@ try:
 
 except:
      print("Problemas con el cierre")
+
+
 
      
