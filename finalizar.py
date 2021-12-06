@@ -67,6 +67,20 @@ driver.execute_script('''document.querySelector("#example > tbody > tr > th:nth-
 time.sleep(3) 
 driver.find_element_by_xpath('/html/body/div[5]/div/div[14]/div/div/div[3]/a').click()
 time.sleep(6)
+driver.find_element_by_xpath('/html/body/div[4]/div/div/div[3]/div/input').send_keys("BigTicket") #credenciales de búsqueda empresa
+time.sleep(3)
+driver.execute_script('''document.querySelector("#example > tbody > tr > th:nth-child(6) > a").click();''')#Visualizar proceso
+time.sleep(3)
+driver.switch_to.window(driver.window_handles[1])
+time.sleep(4)
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #scroll de la página
+#Descargar PDF
+time.sleep(4)
+driver.find_element_by_xpath("/html/body/div[3]/a[2]").click()#Click al boton descargar 
+time.sleep(5)
+driver.close()
+driver.switch_to.window(driver.window_handles[0])
+time.sleep(5)
 driver.find_element_by_xpath('/html/body/div[2]/div/button[2]').click() #Perfil
 time.sleep(1)
 driver.find_element_by_xpath('/html/body/div[2]/div/div/a[2]').click() #Click cerrar sesion 
